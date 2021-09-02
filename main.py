@@ -9,7 +9,13 @@ print(Fore.GREEN+"How much you need to record?")
 
 key = []
 commandLine = ''
-ammount = int(input('>:'))
+try: 
+    ammount = int(input('>:'))
+except:
+    print(Fore.RED + "Error")
+    exit()
+
+loop = False
 
 def getKey(time):
     for i in range(0,time):
@@ -29,11 +35,18 @@ while True:
         getKey(ammount)
     elif commandLine == "2":
         print(key)
+    elif commandLine == "loop":
+        loop = True
     elif commandLine == "3":
         try:
-            sleep(5)
-            for i in key:
-                pg.press(i)
+            sleep(3)
+            if loop == True:
+                while True:
+                    for i in key:
+                        pg.press(i)
+            else:
+                for i in key:
+                    pg.press(i)
         except:
             print(Fore.RED + "Error")
     elif commandLine == "clr":
@@ -42,5 +55,5 @@ while True:
 
 #  ____ _____  ____  ____ __  __
 # | _) \| () )/ () \/ () \\ \/ /
-# |____/|_|\_\\____/\____//_/\_\
+# |____/|_|\_\\____/\____//_/\_\________
 #dr00x
