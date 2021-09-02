@@ -37,6 +37,10 @@ while True:
         print(key)
     elif commandLine == "loop":
         loop = True
+        print(Fore.YELLOW + "Loop is on")
+    elif commandLine == "loopoff":
+        loop = False
+        print(Fore.YELLOW + "Loop is off")
     elif commandLine == "3":
         try:
             sleep(3)
@@ -56,4 +60,4 @@ while True:
 #  ____ _____  ____  ____ __  __
 # | _) \| () )/ () \/ () \\ \/ /
 # |____/|_|\_\\____/\____//_/\_\________
-#dr00x
+#dr00x_
